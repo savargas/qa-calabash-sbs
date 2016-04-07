@@ -54,3 +54,16 @@ Then(/^I touch Sign up button on login screen$/) do
   @app.login_screen.signup_button.await
   @app.login_screen.signup_button.touch
 end
+
+Then(/^I login with email "([^"]*)" and password "([^"]*)"$/) do |email, password|
+  @app.home_screen.menu.await
+  @app.home_screen.menu.touch
+  @app.home_screen.search.await
+  @app.home_screen.search.touch
+
+  @app.login_screen.email.await
+  @app.login_screen.email.insert_text(email)
+  @app.login_screen.password_field.insert_text(password)
+  @app.login_screen.signin_button.touch
+  @app.search_screen.search_field.await
+end

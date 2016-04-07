@@ -1,3 +1,3 @@
 And(/^I should see Search screen$/) do
-  @app.search_screen.search_field.await
+  wait_for(:timeout => 60) { element_exists(@app.search_screen.search_field.uiquery) }
 end

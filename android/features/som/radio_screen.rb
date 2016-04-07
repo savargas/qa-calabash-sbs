@@ -1,6 +1,8 @@
 class RadioScreen < Testmunk::Android::Screen
 
-  button :play_pause_button, {id: 'player_fragment_play_pause_button'}
-  button :close_player, {id: 'player_close_button'}
-
+  view :player_layout, {id: 'player_layout'}
+  view :timer, {id: 'timer'}
+  button :play_pause_button, {id: 'ic_play'}
+  button :play_button, {id: 'start_play'}
+  button :close_player, {id: 'close'}
 end

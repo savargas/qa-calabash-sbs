@@ -6,11 +6,5 @@ Before do
 end
 
 AfterStep do
-  check_for_ad
-end
 
-def check_for_ad
-  if element_exists("* id:'statusBarBackground'")
-    touch("*")
-  end
 end
