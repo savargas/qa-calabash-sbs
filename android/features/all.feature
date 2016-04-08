@@ -65,6 +65,15 @@ Feature: Regression feature
     And I swipe to the next radio station
     Then I verify radio is playing
 
+#  @wip
+#  Scenario: User able to click on Heart icon
+#    Given I am on the Welcome screen
+#    Then I close welcome screen
+#    And I press on Heart icon in home screen
+#    Then I should see Heart icon is selected
+
+
+
 #  Scenario: Explore Screen (Not Signed In)
 #    Given I am on the Welcome screen
 #    Then I close welcome screen

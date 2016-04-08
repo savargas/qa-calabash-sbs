@@ -1,5 +1,8 @@
 And(/^I should see Home screen$/) do
-  @app.home_screen.await
+  @app.login_screen.await
+
+
+
 end
 
 Given(/^I am on the Welcome screen$/) do
@@ -7,7 +10,6 @@ Given(/^I am on the Welcome screen$/) do
 end
 
 Then(/^I close welcome screen$/) do
-
   @app.welcome_screen.close_button.touch
 end
 
@@ -50,4 +52,16 @@ end
 When(/^I swipe to the next radio station$/) do
   perform_action('drag', 75, 25, 50, 50, 1)
   sleep(1)
+end
+
+And(/^I press on Heart icon in home screen$/) do
+  @app.home_screen.heart_button.await
+  @app.home_screen.heart_button.touch
+end
+
+
+Then(/^I should see Heart icon is selected$/) do
+  if @app.home_screen.state_of_heart_button == false
+    fail("Expecting Heart icon to be selected")
+  end
 end

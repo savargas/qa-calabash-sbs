@@ -1,6 +1,7 @@
 class LoginScreen < Testmunk::Android::Screen
 
   button :play_radio, {id: 'action_play'}
+  button :play_radio_button, "* id: 'action_play'"
   field :email, {id: 'email'}
   field :password_field, {id: 'password'}
   field :confirm_password_field, {id: 'password_confirm'}
@@ -13,6 +14,10 @@ class LoginScreen < Testmunk::Android::Screen
   button :signin_button, {id: 'action_sign_in'}
   button :signup_button, {marked: 'Sign up'}
   button :cancel, {marked: 'Navigate up'}
+
+  def traits
+    play_radio
+  end
 
   def send_random_email
     email.insert_text(generate_email)
